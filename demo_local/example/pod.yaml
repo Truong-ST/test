@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: my-app
-      image: truong312/my-app:v1
+      image: truong312/cicd:v1
 
       env:
         - name: DEMO

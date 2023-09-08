@@ -6,6 +6,9 @@ spec:
   selector:
     app: my-app
   ports:
-    - name: http
+    # - name: http
+    - protocol: TCP
       port: 80
       targetPort: 5000
+  type: LoadBalancer
+  # type: NodePort

@@ -2,7 +2,7 @@ name: Run pytest and autopep8 on pull request
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   pretest:

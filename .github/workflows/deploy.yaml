@@ -17,7 +17,7 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v4
         name: Build and push Docker image
         with:
-          image: huydnt1801/my-app
+          image: truong312/democicd:v2
           registry: ghcr.io
           dockerfile: Dockerfile
           username: ${{ github.actor }}
@@ -37,7 +37,7 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
-          context: huytest
+          context: truong312
         id: setcontext
 
       - name: Get tag name
@@ -46,7 +46,7 @@ jobs:
       - name: Get new Image
         id: image
         run: |
-          echo "::set-output name=image::ghcr.io/huydnt1801/my-app:$GIT_TAG_NAME"
+          echo "::set-output name=image::ghcr.io/truong312/democicd:$GIT_TAG_NAME"
 
       - name: Deploy to K8s
         uses: Azure/k8s-deploy@v1
